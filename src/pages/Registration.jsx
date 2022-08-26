@@ -9,7 +9,7 @@ import { urls, publicLinks } from "../constants/links";
 export default function Registration() {
   const navigate = useNavigate();
   return (
-    <div className="w-full flex justify-center p-10 h-auto bg-gray-700">
+    <div className="reg">
       <Formik
         initialValues={{
           username: "",
@@ -29,72 +29,51 @@ export default function Registration() {
         }}
       >
         {({ errors, touched }) => (
-          <Form className="bg-slate-300 rounded p-2 shadow px-4">
-            <h1 className="text-white text-xl">Register</h1>
-            <div className="text-white flex flex-col mb-2">
-              <label htmlFor="username" className="text-sm">
-                Username
-              </label>
-              <Field
-                name="username"
-                className="rounded bg-white outline px-2"
-              />
+          <Form className="reg-form">
+            <h3 className="form-title">Register</h3>
+            <div className="input-entry">
+              <label htmlFor="username">Username</label>
+              <Field name="username" className="input-field" />
               {touched.username && errors.username && (
-                <div className="my-1 text-xs text-red-700 italic">
-                  {errors.username}
-                </div>
+                <div className="input-error">{errors.username}</div>
               )}
             </div>
-            <div className="text-white flex flex-col mb-2">
-              <label htmlFor="email" className="text-sm">
-                Email
-              </label>
-              <Field name="email" className="rounded bg-white outline px-2" />
+
+            <div className="input-entry">
+              <label htmlFor="email">Email</label>
+              <Field name="email" className="input-field" />
               {touched.email && errors.email && (
-                <div className="my-1 text-xs text-red-700 italic">
-                  {errors.email}
-                </div>
+                <div className="input-error">{errors.email}</div>
               )}
             </div>
-            <div className="text-white flex flex-col mb-2">
-              <label htmlFor="password" className="text-sm">
-                Password
-              </label>
-              <Field
-                type="password"
-                name="password"
-                className="rounded bg-white outline px-2"
-              />
+
+            <div className="input-entry">
+              <label htmlFor="password">Password</label>
+              <Field type="password" name="password" className="input-field" />
               {touched.password && errors.password && (
-                <div className="my-1 text-xs text-red-700 italic">
-                  {errors.password}
-                </div>
+                <div className="input-error">{errors.password}</div>
               )}
             </div>
-            <div className="text-white flex flex-col mb-2">
-              <label htmlFor="confirmPassword" className="text-sm">
-                Confirm Password
-              </label>
+
+            <div className="input-entry">
+              <label htmlFor="confirmPassword">Confirm Password</label>
               <Field
                 type="password"
                 name="confirmPassword"
-                className="rounded bg-white outline px-2"
+                className="input-field"
               />
               {touched.confirmPassword && errors.confirmPassword && (
-                <div className="my-1 text-xs text-red-700 italic">
-                  {errors.confirmPassword}
-                </div>
+                <div className="input-error">{errors.confirmPassword}</div>
               )}
             </div>
-            <button
-              type="submit"
-              className="rounded shadow bg-blue-700 p-1 text-white hover:opacity-90 w-full"
-            >
+
+            <button type="submit" className="form-btn">
               Submit
             </button>
-            <p className="text-white">
-              <span className="text-xs">Already have an account?</span>{" "}
-              <Link className="text-blue-700 italic underline" to="/login/">
+
+            <p className="input-link">
+              <span>Already have an account?</span>{" "}
+              <Link to="/login/" className="input-redirect">
                 Sign in
               </Link>
             </p>

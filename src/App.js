@@ -1,6 +1,6 @@
 import React from "react";
 import BaseRouter from "./constants/Routes";
-import './index.css';
+import './App.css';
 
 function App() {
   return (

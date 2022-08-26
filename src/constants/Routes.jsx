@@ -1,5 +1,6 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "../pages/Dashboard";
 import { publicLinks } from "./links";
 
 const Home = React.lazy(() => import("../pages/Home"));
@@ -14,6 +15,7 @@ function BaseRouter() {
           <Route exact path={publicLinks.Home} element={<Home />} />
           <Route path={publicLinks.Login} element={<Login />} />
           <Route path={publicLinks.Registration} element={<Registration />} />
+          <Route path={publicLinks.Dashboard} element={<Dashboard />} />
         </Routes>
       </Suspense>
     </Router>

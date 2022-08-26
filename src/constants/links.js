@@ -1,7 +1,8 @@
 const publicLinks = {
   Home: '/',
   Login: '/login',
-  Registration: '/register'
+  Registration: '/register',
+  Dashboard: '/dashboard'
 };
 
 const urls = {
