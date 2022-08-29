@@ -1,13 +1,16 @@
 const publicLinks = {
   Home: '/',
   Login: '/login',
-  Registration: '/register',
-  Dashboard: '/dashboard'
+  Registration: '/register'
 };
+
+const privateLinks = {
+  Dashboard: '/dashboard'
+}
 
 const urls = {
     REGISTER: "register/",
     LOGIN: "login/"
 };
 
-export {urls, publicLinks}; 
+export {urls, publicLinks, privateLinks}; 

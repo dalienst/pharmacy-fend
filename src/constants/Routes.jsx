@@ -1,7 +1,8 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Dashboard from "../pages/Dashboard";
-import { publicLinks } from "./links";
+import { publicLinks, privateLinks } from "./links";
+import RequireAuth from "../components/RequireAuth";
 
 const Home = React.lazy(() => import("../pages/Home"));
 const Login = React.lazy(() => import("../pages/Login"));
@@ -15,7 +16,9 @@ function BaseRouter() {
           <Route exact path={publicLinks.Home} element={<Home />} />
           <Route path={publicLinks.Login} element={<Login />} />
           <Route path={publicLinks.Registration} element={<Registration />} />
-          <Route path={publicLinks.Dashboard} element={<Dashboard />} />
+          <Route element={<RequireAuth />}>
+            <Route path={privateLinks.Dashboard} element={<Dashboard />} />
+          </Route>
         </Routes>
       </Suspense>
     </Router>
