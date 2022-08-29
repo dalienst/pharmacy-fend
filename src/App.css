@@ -311,7 +311,7 @@ h6 {
 /* Dashboard welcome screen */
 .welcome-screen {
     margin: 20px;
-    background-color: #C8B6E2;
+    background-color: var(--secondaryColor);
     border: 2px solid gray;
     border-radius: 10px;
     padding: 8px;

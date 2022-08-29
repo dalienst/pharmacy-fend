@@ -1,12 +1,13 @@
 const publicLinks = {
   Home: '/',
   Login: '/login',
-  Registration: '/register'
+  Registration: '/register',
+  Dashboard: '/dashboard'
 };
 
 const privateLinks = {
   Dashboard: '/dashboard'
-}
+};
 
 const urls = {
     REGISTER: "register/",

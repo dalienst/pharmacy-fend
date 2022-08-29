@@ -1,14 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { Formik, Form, Field } from "formik";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "../api/axios";
-import { urls, publicLinks } from "../constants/links";
+import { urls, publicLinks, privateLinks } from "../constants/links";
 import useAuth from "../hooks/useAuth";
 
 function Login() {
   const { setAuth } = useAuth();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || publicLinks.Dashboard;
   const navigate = useNavigate();
   return (
     <div className="reg">
@@ -21,7 +23,7 @@ function Login() {
           try {
             await axios.post(urls.LOGIN, values);
             toast.success("successfully logged in");
-            navigate(publicLinks.Dashboard, { replace: true });
+            navigate(from, { replace: true });
           } catch (error) {
             toast.error("login failed");
           }

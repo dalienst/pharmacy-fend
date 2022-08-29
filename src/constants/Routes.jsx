@@ -1,12 +1,12 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Dashboard from "../pages/Dashboard";
 import { publicLinks, privateLinks } from "./links";
 import RequireAuth from "../components/RequireAuth";
 
 const Home = React.lazy(() => import("../pages/Home"));
 const Login = React.lazy(() => import("../pages/Login"));
 const Registration = React.lazy(() => import("../pages/Registration"));
+const Dashboard = React.lazy(() => import("../pages/Dashboard"));
 
 function BaseRouter() {
   return (
