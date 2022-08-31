@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { publicLinks, privateLinks } from "./links";
 import RequireAuth from "../components/RequireAuth";
@@ -9,16 +9,31 @@ const Registration = React.lazy(() => import("../pages/Registration"));
 const Dashboard = React.lazy(() => import("../pages/Dashboard"));
 
 function BaseRouter() {
+  const [user, setUser] = useState(null);
   return (
     <Router>
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
           <Route exact path={publicLinks.Home} element={<Home />} />
-          <Route path={publicLinks.Login} element={<Login />} />
+          <Route
+            path={publicLinks.Login}
+            element={<Login setUser={setUser}></Login>}
+          />
           <Route path={publicLinks.Registration} element={<Registration />} />
-          <Route element={<RequireAuth />}>
+
+          {/* <Route element={<RequireAuth user={user} />}>
             <Route path={privateLinks.Dashboard} element={<Dashboard />} />
-          </Route>
+          </Route> */}
+
+          <Route
+            path={privateLinks.Dashboard}
+            element={
+              <RequireAuth user={user}>
+                <Dashboard />
+              </RequireAuth>
+            }
+          />
+
         </Routes>
       </Suspense>
     </Router>

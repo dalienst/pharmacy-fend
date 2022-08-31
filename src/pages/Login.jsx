@@ -7,10 +7,10 @@ import axios from "../api/axios";
 import { urls, publicLinks, privateLinks } from "../constants/links";
 import useAuth from "../hooks/useAuth";
 
-function Login() {
-  const { setAuth } = useAuth();
-  const location = useLocation();
-  const from = location.state?.from?.pathname || publicLinks.Dashboard;
+const Login = ({setUser}) => {
+  // const { setAuth } = useAuth();
+  // const location = useLocation();
+  // const from = location.state?.from?.pathname || publicLinks.Dashboard;
   const navigate = useNavigate();
   return (
     <div className="reg">
@@ -21,9 +21,10 @@ function Login() {
         }}
         onSubmit={async (values) => {
           try {
-            await axios.post(urls.LOGIN, values);
+            const response = await axios.post(urls.LOGIN, values);
             toast.success("successfully logged in");
-            navigate(from, { replace: true });
+            setUser(response.data);
+            navigate(privateLinks.Dashboard, { replace: true });
           } catch (error) {
             toast.error("login failed");
           }
