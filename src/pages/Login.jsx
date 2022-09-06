@@ -6,11 +6,13 @@ import { toast } from "react-toastify";
 import axios from "../api/axios";
 import { urls, publicLinks, privateLinks } from "../constants/links";
 import useAuth from "../hooks/useAuth";
+import jwtDecode from "../utils/jwt_decode";
+import LocalStorageService from "../utils/local_storage";
 
 const Login = ({setUser}) => {
-  // const { setAuth } = useAuth();
-  // const location = useLocation();
-  // const from = location.state?.from?.pathname || publicLinks.Dashboard;
+  const { setAuth } = useAuth();
+  const location = useLocation();
+  const from = location.state?.from?.pathname || publicLinks.Dashboard;
   const navigate = useNavigate();
   return (
     <div className="reg">
@@ -22,11 +24,15 @@ const Login = ({setUser}) => {
         onSubmit={async (values) => {
           try {
             const response = await axios.post(urls.LOGIN, values);
+            LocalStorageService.setToken(response.data);
+            setAuth({
+              access: response.data.access,
+              user_id: jwtDecode(response.data.access),
+            });
             toast.success("successfully logged in");
-            setUser(response.data);
-            navigate(privateLinks.Dashboard, { replace: true });
+            navigate(from, { replace: true });
           } catch (error) {
-            toast.error("login failed");
+            toast.error("Incorrect email or password");
           }
         }}
       >

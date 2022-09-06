@@ -11,7 +11,8 @@ const privateLinks = {
 
 const urls = {
     REGISTER: "register/",
-    LOGIN: "login/"
+    LOGIN: "login/",
+    REFRESH: "login/refresh/"
 };
 
 export {urls, publicLinks, privateLinks}; 

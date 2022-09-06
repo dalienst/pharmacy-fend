@@ -10,8 +10,8 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <AuthProvider>
-      <ToastContainer />
       <App />
+      <ToastContainer />
     </AuthProvider>
   </React.StrictMode>
 );

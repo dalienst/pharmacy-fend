@@ -1,23 +1,16 @@
-import { Navigate } from "react-router-dom";
+import { useLocation, Navigate, Outlet } from 'react-router-dom';
+import { publicLinks } from '../constants/links';
+import useAuth from '../hooks/useAuth';
 
-// const RequireAuth = () => {
-//     const { auth } = useAuth();
-//     const location = useLocation();
+function RequireAuth() {
+  const { auth } = useAuth();
+  const location = useLocation();
 
-//     return (
-//         auth?.user
-//             ? <Outlet />
-//             : <Navigate to='/login' state={{ from: location }} replace />
-//     );
-// }
-
-// export default RequireAuth;
-
-const RequireAuth = ({children, user}) => {
-    if(!user) {
-        return <Navigate to='/login' />;
-    }
-    return children;
-    
+  return auth?.access ? (
+    <Outlet />
+  ) : (
+    <Navigate to={publicLinks.LOGIN} state={{ from: location }} replace />
+  );
 }
+
 export default RequireAuth;
