@@ -4,7 +4,7 @@ import { Formik, Form, Field } from "formik";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { toast } from "react-toastify";
 import axios from "../api/axios";
-import { urls, publicLinks, privateLinks } from "../constants/links";
+import { urls, privateLinks } from "../constants/links";
 import useAuth from "../hooks/useAuth";
 import jwtDecode from "../utils/jwt_decode";
 import LocalStorageService from "../utils/local_storage";
@@ -12,7 +12,7 @@ import LocalStorageService from "../utils/local_storage";
 const Login = ({setUser}) => {
   const { setAuth } = useAuth();
   const location = useLocation();
-  const from = location.state?.from?.pathname || publicLinks.Dashboard;
+  const from = location.state?.from?.pathname || privateLinks.Update_profile;
   const navigate = useNavigate();
   return (
     <div className="reg">
@@ -28,6 +28,7 @@ const Login = ({setUser}) => {
             setAuth({
               access: response.data.access,
               user_id: jwtDecode(response.data.access),
+              isLoggedIn: true
             });
             toast.success("successfully logged in");
             navigate(from, { replace: true });

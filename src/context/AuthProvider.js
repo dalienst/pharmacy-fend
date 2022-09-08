@@ -6,7 +6,7 @@ import jwtDecode from '../utils/jwt_decode';
 const AuthContext = createContext({});
 
 export function AuthProvider({ children }) {
-  const [auth, setAuth] = useState({});
+  const [auth, setAuth] = useState({isLoggedIn: false, user_id: null, access: null});
 
   useEffect(() => {
     setAuth((prev) => {

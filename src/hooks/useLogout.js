@@ -4,9 +4,13 @@ import LocalStorageService from '../utils/local_storage';
 import useAuth from './useAuth';
 
 const useLogout = () => {
-  const { setAuth } = useAuth();
+  const { auth, setAuth } = useAuth();
   const logout = async () => {
-    setAuth({});
+    setAuth({
+      ...auth,
+      isLoggedIn: false,
+      access: null,
+    });
     try {
       await axios('/logout', {
         withCredentials: true
