@@ -3,7 +3,9 @@ import axios from "axios";
 const BASE_URL = "https://project-pharmacy.herokuapp.com/pharmacy/"
 
 export default axios.create({
-    baseURL: BASE_URL
+    baseURL: BASE_URL,
+    headers: { 'Content-Type': 'application/json' },
+    withCredentials: true
 });
 
 export const axiosPrivate = axios.create({
