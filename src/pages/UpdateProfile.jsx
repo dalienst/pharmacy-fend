@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { Formik, Form, Field } from 'formik';
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { privateLinks, urls } from '../constants/links';
 import useAuth from '../hooks/useAuth';
@@ -10,7 +10,7 @@ import Sidebar from '../layouts/Sidebar';
 
 export default function UpdateProfile() {
     const navigate = useNavigate();
-    // const {auth} = useAuth();
+    const {auth} = useAuth();
     const axiosPrivate = useAxiosPrivate();
   return (
     <div className="main">
@@ -30,8 +30,8 @@ export default function UpdateProfile() {
             formData.append("contact", values.contact);
             formData.append("employee_number", values.employee_number);
             try {
-              // await axiosPrivate.patch(`employee/${auth?.user_id}/`, formData);
-              await axiosPrivate.post(urls.PROFILE, formData);
+              await axiosPrivate.patch(`employee/${auth?.user_id}/`, formData);
+              // await axiosPrivate.post(urls.PROFILE, formData);
               toast.success("Profile Updated");
               navigate(privateLinks.Profile, { replace: true });
             } catch (error) {
@@ -40,32 +40,36 @@ export default function UpdateProfile() {
           }}
         >
           {({ touched }) => (
-            <Form className="reg-form">
-              <h3 className="form-title">Update Profile</h3>
+            <Form className="profile-card">
+              <h3 className="profile-title">Update Profile</h3>
 
-              <div className="input-entry">
+              <div className="update-input-entry">
                 <label htmlFor="first_name">First Name</label>
-                <Field name="first_name" className="input-field" />
+                <Field name="first_name" className="update-input-field" />
               </div>
 
-              <div className="input-entry">
+              <div className="update-input-entry">
                 <label htmlFor="last_name">Last Name</label>
-                <Field name="last_name" className="input-field" />
+                <Field name="last_name" className="update-input-field" />
               </div>
 
-              <div className="input-entry">
+              <div className="update-input-entry">
                 <label htmlFor="contact">Contact</label>
-                <Field name="contact" className="input-field" />
+                <Field name="contact" className="update-input-field" />
               </div>
 
-              <div className="input-entry">
+              <div className="update-input-entry">
                 <label htmlFor="employee_number">Employee Number</label>
-                <Field name="employee_number" className="input-field" />
+                <Field name="employee_number" className="update-input-field" />
               </div>
 
-              <button type="submit" className="form-btn">
+              <button type="submit" className="update-form-btn">
                 Submit
               </button>
+
+              <Link className="update-profile-link" to={privateLinks.Profile}>
+                View Profile
+              </Link>
             </Form>
           )}
         </Formik>
