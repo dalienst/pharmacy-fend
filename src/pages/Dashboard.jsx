@@ -23,8 +23,8 @@ function Dashboard () {
   const {auth} = useAuth();
   const fetchProfile = async () => {
     try {
-      const response = await axiosPrivate.get(`employee/`);
-      setProfile(response.data[0]);
+      const response = await axiosPrivate.get(`employee/${auth?.user_id}/`);
+      setProfile(response.data);
     } catch (error) {
       toast.error('Cannot retrieve name');
     }
@@ -45,7 +45,7 @@ function Dashboard () {
           <div className="row">
             <div className="column">
               <p className="welcome-msg">
-                Welcome {profile.first_name}
+                <h3>Welcome {profile.first_name}</h3>
                 <br></br>
                 This is your dashboard.<br></br>
               </p>

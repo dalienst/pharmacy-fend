@@ -39,7 +39,6 @@ h2 {
 h3 {
   font-size: 1.5em;
   line-height: 1;
-  margin-bottom: 1em;
 }
 h4 {
   font-size: 1.2em;
@@ -252,7 +251,7 @@ h6 {
     border: 1px solid;
     border-radius: 5px;
     margin: auto;
-    box-shadow: 10px 10px lightblue;
+    box-shadow: 2px 5px var(--mainGrey);
 }
 .input-entry {
     color: white;
@@ -392,3 +391,85 @@ h6 {
   width: 1.7em;
 }
 
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 5px var(--mainGrey);
+  padding: 10px;
+  padding-left: 16px;
+  padding-right: 16px;
+  border: 1px solid;
+  border-radius: 5px;
+  background-color: var(--mainGrey);
+  margin: auto;
+}
+
+.profile-title {
+  text-align: center;
+  margin-bottom: 0.5em;
+  color: var(--primaryColor);
+}
+
+.profile-label {
+  display: flex;
+  margin: 1em;
+  font-size: 1em;
+}
+
+.profile-input {
+  margin-left: 0.5em;
+  color: blue;
+}
+
+.profile-btn {
+    border: 1px solid var(--primaryColor);
+    border-radius: 4px;
+    background-color: var(--primaryColor);
+    color: white;
+    text-transform: capitalize;
+    padding: 5px;
+    width: 100%;
+    margin-top: 2px;
+    cursor: pointer;
+}
+
+.profile-link {
+  text-align: center;
+  padding: 1em;
+  color: blue;
+}
+
+.update-profile-link {
+  text-align: center;
+  padding: 1em;
+  color: blue;
+  margin: 1em;
+}
+
+.update-input-entry {
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    padding-bottom: 8px;
+}
+
+.update-input-field {
+    padding-left: 8px;
+    padding-right: 8px;
+    border: 1px solid;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.update-form-btn {
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: blue;
+    color: white;
+    text-transform: capitalize;
+    padding: 5px;
+    width: 100%;
+    margin-top: 2px;
+    cursor: pointer;
+}
