@@ -1,0 +1,77 @@
+[
+    {
+        "title": "General",
+        "icon": "bi-gear-fill",
+        "childrens": [
+            {
+                "title": "Dashboard",
+                "icon": "bi-house-fill",
+                "path": "/dashboard"
+            },
+            {
+                "title": "FAQ",
+                "icon": "bi-question-circle-fill"
+            }
+        ]
+    },
+    {
+        "title": "Profile",
+        "icon": "bi-person-fill",
+        "childrens": [
+            {
+                "title": "Profile",
+                "path": "/profile"
+            },
+            {
+                "title":"Update Profile",
+                "path":"/update-profile"
+            }
+        ]
+    },
+    {
+        "title": "Stock",
+        "icon": "bi-basket-fill",
+        "childrens": [
+            {
+                "title": "Check Stock",
+                "path": "/login"
+            },
+            {
+                "title": "Add Stock",
+                "path": "/register"
+            },
+            {
+                "title": "Update Stock",
+                "path": "/forgot-password"
+            }
+        ]
+    },
+    {
+        "title": "Distributors",
+        "icon": "bi-truck",
+        "childrens": [
+            {
+                "title": "Check Distro",
+                "path": "/login"
+            },
+            {
+                "title": "Add Distro",
+                "path": "/register"
+            },
+            {
+                "title": "Update Distro",
+                "path": "/forgot-password"
+            }
+        ]
+    },
+    {
+        "title": "Report Bug",
+        "icon": "bi-bug",
+        "path": "/report-bug"
+    },
+    {
+        "title": "Logout",
+        "icon": "bi-door-open",
+        "path": "/logout"
+    }
+]
