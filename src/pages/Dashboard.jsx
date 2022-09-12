@@ -12,7 +12,7 @@ function Dashboard () {
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({
-    pharmacist: 'pharmacy01',
+    username: 'pharmacy01',
     first_name: 'Pharmacy',
     last_name: 'Project',
     contact: '001',
@@ -45,7 +45,7 @@ function Dashboard () {
           <div className="row">
             <div className="column">
               <p className="welcome-msg">
-                <h3>Welcome {profile.first_name}</h3>
+                Welcome {profile.username}
                 <br></br>
                 This is your dashboard.<br></br>
               </p>
