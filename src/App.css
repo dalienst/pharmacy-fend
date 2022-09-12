@@ -165,7 +165,7 @@ h6 {
 .defaultHero,
 .roomsHero {
   min-height: calc(100vh);
-  background: url("./images/heartTabs.jpg") center/cover no-repeat;
+  /* background: url("./images/heartTabs.jpg") center/cover no-repeat; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -310,13 +310,85 @@ h6 {
 
 /* Dashboard welcome screen */
 .welcome-screen {
-    margin: 20px;
-    background-color: var(--secondaryColor);
-    border: 2px solid gray;
-    border-radius: 10px;
+    margin: 10px;
+    background-color: var(--mainGrey);
+    border-radius: 3px;
     padding: 8px;
 }
 .welcome-msg {
     font-size: large;
     color: black;
 }
+
+/* sidebar*/
+.main{
+  display: flex;
+  height: 100vh;
+}
+
+.container{
+  flex-grow: 1;
+  padding: 2em;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar{
+  width: 260px;
+  flex-shrink: 0;
+  background-color: var(--secondaryColor);
+  height: 100%;
+  overflow: auto;
+}
+
+
+.sidebar-item{
+  padding: .75em 1em;
+  display: block;
+  transition: background-color .15s;
+  border-radius: 5px;
+  color: #fff
+}
+.sidebar-item:hover{
+  background-color: rgba(255, 255, 255, .1);
+}
+
+.sidebar-title{
+  display: flex;
+  /* font-size: 1.2em; */
+  justify-content: space-between;
+}
+.sidebar-title span i{
+  display: inline-block;
+  width: 1.5em;
+}
+.sidebar-title .toggle-btn{
+  cursor: pointer;
+  transition: transform .3s;
+}
+.sidebar-item.open > .sidebar-title .toggle-btn{
+  transform: rotate(180deg);
+}
+.sidebar-content{
+  padding-top: .25em;
+  height: 0;
+  overflow: hidden;
+}
+.sidebar-item.open > .sidebar-content{
+  height: auto;
+}
+
+.sidebar-item.plain{
+  color: #fff;
+  text-decoration: none;
+}
+.sidebar-item.plain:hover{
+  text-decoration: underline;
+}
+.sidebar-item.plain i{
+  display: inline-block;
+  width: 1.7em;
+}
+
