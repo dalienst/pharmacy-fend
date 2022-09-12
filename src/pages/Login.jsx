@@ -12,7 +12,7 @@ import LocalStorageService from "../utils/local_storage";
 const Login = ({setUser}) => {
   const { setAuth } = useAuth();
   const location = useLocation();
-  const from = location.state?.from?.pathname || privateLinks.Update_profile;
+  const from = location.state?.from?.pathname || privateLinks.Dashboard;
   const navigate = useNavigate();
   return (
     <div className="reg">
