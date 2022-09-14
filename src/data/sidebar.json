@@ -5,14 +5,19 @@
         "path": "/dashboard"
     },
     {
+        "title": "Distributors",
+        "icon": "bi-truck",
+        "path": "/distributors"
+    },
+    {
         "title": "Stock",
         "icon": "bi-basket-fill",
         "path": "/products"
     },
     {
-        "title": "Distributors",
-        "icon": "bi-truck",
-        "path": "/distributors"
+        "title": "Orders",
+        "icon": "bi-cart",
+        "path": "/orders"
     },
     {
         "title": "Report Bug",

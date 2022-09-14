@@ -9,7 +9,8 @@ const privateLinks = {
   Update_profile: '/update-profile',
   Dashboard: '/dashboard',
   Products: '/products',
-  Distros: '/distributors'
+  Distros: '/distributors',
+  Orders: '/orders'
 };
 
 const urls = {
@@ -18,7 +19,8 @@ const urls = {
     REFRESH: "pharmacy/login/refresh/",
     PROFILE: "pharmacy/employee/",
     PRODUCTS: "inventory/product/",
-    DISTROS: "pharmacy/distributor/"
+    DISTROS: "pharmacy/distributor/",
+    ORDERS: "inventory/order/"
 };
 
 export {urls, publicLinks, privateLinks}; 

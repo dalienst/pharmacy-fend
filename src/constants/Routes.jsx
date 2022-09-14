@@ -10,6 +10,7 @@ const Registration = React.lazy(() => import("../pages/Registration"));
 const Dashboard = React.lazy(() => import("../pages/Dashboard"));
 const Products = React.lazy(() => import("../pages/Products"));
 const Distros = React.lazy(() => import("../pages/Distros"));
+const Orders = React.lazy(() => import("../pages/Orders"));
 // const Profile = React.lazy(() => import("../pages/Profile"));
 // const UpdateProfile = React.lazy(() => import("../pages/UpdateProfile"));
 
@@ -21,6 +22,7 @@ function BaseRouter() {
           <Route exact path={publicLinks.Home} element={<Home />} />
           <Route path={publicLinks.Login} element={<Login />} />
           <Route path={publicLinks.Registration} element={<Registration />} />
+          <Route path={privateLinks.Orders} element={<Orders />} />
 
           <Route element={<PersistLogin />}>
             <Route element={<RequireAuth />}>
