@@ -1,32 +1,8 @@
 [
     {
-        "title": "General",
-        "icon": "bi-gear-fill",
-        "childrens": [
-            {
-                "title": "Dashboard",
-                "icon": "bi-house-fill",
-                "path": "/dashboard"
-            },
-            {
-                "title": "FAQ",
-                "icon": "bi-question-circle-fill"
-            }
-        ]
-    },
-    {
-        "title": "Profile",
-        "icon": "bi-person-fill",
-        "childrens": [
-            {
-                "title": "Profile",
-                "path": "/profile"
-            },
-            {
-                "title":"Update Profile",
-                "path":"/update-profile"
-            }
-        ]
+        "title": "Dashboard",
+        "icon": "bi-house-fill",
+        "path": "/dashboard"
     },
     {
         "title": "Stock",

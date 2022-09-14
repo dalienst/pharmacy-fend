@@ -7,7 +7,7 @@ export default function Home() {
   return (
       <Hero>
         <Banner title="Medicine Center">
-          <Link to="/login" className="btn-primary">Start Shopping</Link>
+          <Link to="/login" className="btn-primary">Welcome</Link>
         </Banner>
       </Hero>
   )

@@ -8,8 +8,8 @@ const Home = React.lazy(() => import("../pages/Home"));
 const Login = React.lazy(() => import("../pages/Login"));
 const Registration = React.lazy(() => import("../pages/Registration"));
 const Dashboard = React.lazy(() => import("../pages/Dashboard"));
-const Profile = React.lazy(() => import("../pages/Profile"));
-const UpdateProfile = React.lazy(() => import("../pages/UpdateProfile"));
+// const Profile = React.lazy(() => import("../pages/Profile"));
+// const UpdateProfile = React.lazy(() => import("../pages/UpdateProfile"));
 
 function BaseRouter() {
   return (
@@ -26,8 +26,8 @@ function BaseRouter() {
           <Route element={<PersistLogin />}>
             <Route element={<RequireAuth />}>
               <Route path={privateLinks.Dashboard} element={<Dashboard />} />
-              <Route path={privateLinks.Update_profile} element={<UpdateProfile />} />
-              <Route path={privateLinks.Profile} element={<Profile />} />
+              {/* <Route path={privateLinks.Update_profile} element={<UpdateProfile />} />
+              <Route path={privateLinks.Profile} element={<Profile />} /> */}
             </Route>
           </Route>
         </Routes>
