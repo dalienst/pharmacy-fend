@@ -28,7 +28,6 @@ export default function Orders() {
       try {
         const response = await axiosPrivate.get(urls.ORDERS);
         setOrders(response.data);
-        console.log(response.data);
       } catch (error) {
         // toast.error('Cannot fetch distributors at this time')
       }
