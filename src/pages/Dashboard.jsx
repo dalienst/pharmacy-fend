@@ -20,10 +20,10 @@ function Dashboard () {
   const {auth} = useAuth();
   const fetchProfile = async () => {
     try {
-      const response = await axiosPrivate.get(`me/${auth?.user_id}/`);
-      setProfile(response.data);
+      // const response = await axiosPrivate.get(`me/${auth?.user_id}/`);
+      // setProfile(response.data);
     } catch (error) {
-      toast.error('Cannot retrieve name');
+      // toast.error('Cannot retrieve name');
     }
   };
 
@@ -38,16 +38,8 @@ function Dashboard () {
     <div className="main">
       <Sidebar />
       <div className="main-container">
-        <div className="welcome-screen">
-          <div className="row">
-            <div className="column">
-              <p className="welcome-msg">
-                Welcome {profile.username}
-                <br></br>
-                This is your dashboard.<br></br>
-              </p>
-            </div>
-          </div>
+        <div className='page-title'>
+          <h2>Dashboard</h2>
         </div>
       </div>
     </div>

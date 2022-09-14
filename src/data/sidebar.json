@@ -7,30 +7,12 @@
     {
         "title": "Stock",
         "icon": "bi-basket-fill",
-        "childrens": [
-            {
-                "title": "Check Stock",
-                "path": "/products"
-            },
-            {
-                "title": "Update Stock",
-                "path": "/"
-            }
-        ]
+        "path": "/products"
     },
     {
         "title": "Distributors",
         "icon": "bi-truck",
-        "childrens": [
-            {
-                "title": "Check Distro",
-                "path": "/distributors"
-            },
-            {
-                "title": "Update Distro",
-                "path": "/forgot-password"
-            }
-        ]
+        "path": "/distributors"
     },
     {
         "title": "Report Bug",
