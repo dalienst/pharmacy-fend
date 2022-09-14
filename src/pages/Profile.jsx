@@ -41,7 +41,7 @@ export default function Profile() {
   return (
     <div className="main">
       <Sidebar />
-      <div className="container">
+      <div className="main-container">
         <article className="profile-card">
           <h3 className="profile-title">Profile</h3>
           <hr></hr>

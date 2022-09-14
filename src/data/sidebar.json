@@ -10,15 +10,11 @@
         "childrens": [
             {
                 "title": "Check Stock",
-                "path": "/login"
-            },
-            {
-                "title": "Add Stock",
-                "path": "/register"
+                "path": "/products"
             },
             {
                 "title": "Update Stock",
-                "path": "/forgot-password"
+                "path": "/"
             }
         ]
     },
@@ -28,11 +24,7 @@
         "childrens": [
             {
                 "title": "Check Distro",
-                "path": "/login"
-            },
-            {
-                "title": "Add Distro",
-                "path": "/register"
+                "path": "/distributors"
             },
             {
                 "title": "Update Distro",

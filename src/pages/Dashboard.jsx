@@ -37,7 +37,7 @@ function Dashboard () {
   return (
     <div className="main">
       <Sidebar />
-      <div className="container">
+      <div className="main-container">
         <div className="welcome-screen">
           <div className="row">
             <div className="column">

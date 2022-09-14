@@ -7,14 +7,18 @@ const publicLinks = {
 const privateLinks = {
   Profile: '/profile',
   Update_profile: '/update-profile',
-  Dashboard: '/dashboard'
+  Dashboard: '/dashboard',
+  Products: '/products',
+  Distros: '/distributors'
 };
 
 const urls = {
-    REGISTER: "register/",
-    LOGIN: "login/",
-    REFRESH: "login/refresh/",
-    PROFILE: "employee/"
+    REGISTER: "pharmacy/register/",
+    LOGIN: "pharmacy/login/",
+    REFRESH: "pharmacy/login/refresh/",
+    PROFILE: "pharmacy/employee/",
+    PRODUCTS: "inventory/product/",
+    DISTROS: "pharmacy/distributor/"
 };
 
 export {urls, publicLinks, privateLinks}; 
