@@ -30,8 +30,8 @@ export default function UpdateProfile() {
             formData.append("contact", values.contact);
             formData.append("employee_number", values.employee_number);
             try {
-              await axiosPrivate.patch(`employee/${auth?.user_id}/`, formData);
-              // await axiosPrivate.post(urls.PROFILE, formData);
+              // await axiosPrivate.patch(`employee/${auth?.user_id}/`, formData);
+              await axiosPrivate.post(urls.PROFILE, formData);
               toast.success("Profile Updated");
               navigate(privateLinks.Profile, { replace: true });
             } catch (error) {

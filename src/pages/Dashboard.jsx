@@ -12,18 +12,15 @@ function Dashboard () {
   const navigate = useNavigate();
   const location = useLocation();
   const [profile, setProfile] = useState({
-    username: 'pharmacy01',
-    first_name: 'Pharmacy',
-    last_name: 'Project',
-    contact: '001',
-    employee_number: 'A01'
+    email: '',
+    username: ''
   });
 
   const controller = new AbortController();
   const {auth} = useAuth();
   const fetchProfile = async () => {
     try {
-      const response = await axiosPrivate.get(`employee/${auth?.user_id}/`);
+      const response = await axiosPrivate.get(`me/${auth?.user_id}/`);
       setProfile(response.data);
     } catch (error) {
       toast.error('Cannot retrieve name');
