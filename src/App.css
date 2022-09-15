@@ -323,11 +323,12 @@ h6 {
 .main{
   display: flex;
   height: 100vh;
+  background-color: var(--mainGrey)
 }
 
 .main-container{
   flex-grow: 1;
-  padding: 2em;
+  padding: 0.5em;
   background-size: cover;
   background-position: center;
   display: flex;
@@ -335,7 +336,7 @@ h6 {
 }
 
 .sidebar{
-  width: 260px;
+  width: 230px;
   flex-shrink: 0;
   background-color: var(--secondaryColor);
   height: 100%;
@@ -482,6 +483,12 @@ h6 {
   td {
     text-align: center;
   }
+
+.product-icon {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2em;
+}
 
 
 
@@ -633,4 +640,12 @@ h6 {
 .primaryBtn:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px -10px rgba(24, 90, 219, 0.6);
+}
+
+
+
+/* other styling */
+.page-nav {
+  width: 100%;
+  background-color: white;
 }
