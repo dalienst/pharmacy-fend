@@ -13,6 +13,7 @@ import ProductsModalDisplay from '../layouts/ProductsModalDisplay';
 export default function Products() {
     const axiosPrivate = useAxiosPrivate();
     const [isOpen, setIsOpen] = useState(false);
+    const [inOpen, setOpen] = useState(false);
     const [products, setProducts] = useState([]);
 
     const controller = new AbortController();
@@ -83,10 +84,10 @@ export default function Products() {
                     <td>{product.distributor}</td>
                     <td>
                       <div className="product-icon">
-                        <button onClick={() => setIsOpen(true)}>
+                        <button onClick={() => setOpen(true)}>
                           <RiRefreshFill />
                         </button>
-                        {isOpen && <ProductsModalDisplay setIsOpen={setIsOpen} />}
+                        {inOpen && <ProductsModalDisplay setOpen={setOpen} />}
                         <button>
                           <RiDeleteBin5Fill />
                         </button>

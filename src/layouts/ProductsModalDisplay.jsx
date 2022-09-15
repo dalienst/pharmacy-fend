@@ -7,7 +7,7 @@ import { toast } from "react-toastify";
 import { urls } from "../constants/links";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 
-const ProductsModalDisplay = ({ setIsOpen }) => {
+const ProductsModalDisplay = ({ setOpen }) => {
   const axiosPrivate = useAxiosPrivate();
   const [products, setProducts] = useState(
     {
@@ -43,13 +43,13 @@ const ProductsModalDisplay = ({ setIsOpen }) => {
 
   return (
     <>
-      <div className="darkBG" onClick={() => setIsOpen(false)} />
+      <div className="darkBG" onClick={() => setOpen(false)} />
       <div className="centered">
         <div className="modal">
           <div className="modalHeader">
             <h5 className="heading">Update the Product</h5>
           </div>
-          <button className="closeBtn" onClick={() => setIsOpen(false)}>
+          <button className="closeBtn" onClick={() => setOpen(false)}>
             <RiCloseLine style={{ marginBottom: "-3px" }} />
           </button>
 
@@ -78,7 +78,7 @@ const ProductsModalDisplay = ({ setIsOpen }) => {
                 try {
                   await axiosPrivate.patch(`inventory/product/`);
                   toast.success("Product Updated");
-                  setIsOpen(false);
+                  setOpen(false);
                 } catch (error) {}
               }}
             >
