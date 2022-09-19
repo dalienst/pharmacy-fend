@@ -7,39 +7,9 @@ import { toast } from "react-toastify";
 import { urls } from "../constants/links";
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 
-const ProductsModalDisplay = ({ setOpen }) => {
+const ProductsModalDisplay = ({ setOpen, product }) => {
   const axiosPrivate = useAxiosPrivate();
-  const [products, setProducts] = useState(
-    {
-      item_name: "",
-      item_description: "",
-      item_type: "",
-      item_code: "",
-      item_price: "",
-      expiry: "",
-      created_at: "",
-      entered_by: "",
-      distributor: "",
-      quantity_in: "",
-    },);
-
-  const controller = new AbortController();
-  const fetchProduct = async () => {
-    try {
-      const response = await axiosPrivate.get(`inventory/product/`);
-      setProducts(response.data);
-      console.log(response.data);
-    } catch (error) {
-      // toast.error('Cannot fetch products at this time')
-    }
-  };
-
-  useEffect(() => {
-    fetchProduct();
-    return () => {
-      controller.abort();
-    };
-  }, []);
+  console.log(product?.item_name);
 
   return (
     <>
@@ -56,14 +26,14 @@ const ProductsModalDisplay = ({ setOpen }) => {
           <div className="modalContent">
             <Formik
               initialValues={{
-                item_name:  products.item_name ,
-                item_description: products.item_description,
-                item_type: products.item_type,
-                quantity_in: products.quantity_in,
-                item_code: products.item_code,
-                item_price: products.item_price,
-                expiry: products.expiry,
-                distributor: products.distributor,
+                item_name: product?.item_name,
+                item_description: product?.item_description,
+                item_type: product?.item_type,
+                quantity_in: product?.quantity_in,
+                item_code: product?.item_code,
+                item_price: product?.item_price,
+                expiry: product?.expiry,
+                distributor: product?.distributor,
               }}
               onSubmit={async (values) => {
                 const formData = new FormData();
@@ -76,7 +46,7 @@ const ProductsModalDisplay = ({ setOpen }) => {
                 formData.append("expiry", values.expiry);
                 formData.append("distributor", values.distributor);
                 try {
-                  await axiosPrivate.patch(`inventory/product/`);
+                  await axiosPrivate.patch(`inventory/product/${product.id}/`);
                   toast.success("Product Updated");
                   setOpen(false);
                 } catch (error) {}
@@ -135,17 +105,6 @@ const ProductsModalDisplay = ({ setOpen }) => {
               )}
             </Formik>
           </div>
-
-          {/* <div className="modalActions">
-            <div className="actionsContainer">
-              <button className="deleteBtn" type="submit">
-                Add
-              </button>
-              <button className="cancelBtn" onClick={() => setIsOpen(false)}>
-                Cancel
-              </button>
-            </div>
-          </div> */}
         </div>
       </div>
     </>

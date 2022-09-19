@@ -8,6 +8,7 @@ import Sidebar from '../layouts/Sidebar';
 import Modal from '../layouts/Modal';
 import { RiDeleteBin5Fill, RiExternalLinkFill, RiRefreshFill } from "react-icons/ri";
 import ProductsModalDisplay from '../layouts/ProductsModalDisplay';
+import { Link } from 'react-router-dom';
 
 
 export default function Products() {
@@ -84,16 +85,9 @@ export default function Products() {
                     <td>{product.distributor}</td>
                     <td>
                       <div className="product-icon">
-                        <button onClick={() => setOpen(true)}>
-                          <RiRefreshFill />
-                        </button>
-                        {inOpen && <ProductsModalDisplay setOpen={setOpen} />}
-                        <button>
-                          <RiDeleteBin5Fill />
-                        </button>
-                        <button>
+                        <Link to ={`/products/${product.id}/detail`}>
                           <RiExternalLinkFill />
-                        </button>
+                        </Link>
                       </div>
                     </td>
                   </tr>

@@ -11,6 +11,7 @@ const Dashboard = React.lazy(() => import("../pages/Dashboard"));
 const Products = React.lazy(() => import("../pages/Products"));
 const Distros = React.lazy(() => import("../pages/Distros"));
 const Orders = React.lazy(() => import("../pages/Orders"));
+const ProductDetail = React.lazy(()=>import("../pages/ProductDetail"))
 // const Profile = React.lazy(() => import("../pages/Profile"));
 // const UpdateProfile = React.lazy(() => import("../pages/UpdateProfile"));
 
@@ -28,6 +29,10 @@ function BaseRouter() {
             <Route element={<RequireAuth />}>
               <Route path={privateLinks.Dashboard} element={<Dashboard />} />
               <Route path={privateLinks.Products} element={<Products />} />
+              <Route
+                path={privateLinks.ProductDetail}
+                element={<ProductDetail />}
+              />
               <Route path={privateLinks.Distros} element={<Distros />} />
               {/* <Route path={privateLinks.Update_profile} element={<UpdateProfile />} />
               <Route path={privateLinks.Profile} element={<Profile />} /> */}

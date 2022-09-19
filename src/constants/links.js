@@ -9,6 +9,7 @@ const privateLinks = {
   Update_profile: '/update-profile',
   Dashboard: '/dashboard',
   Products: '/products',
+  ProductDetail: '/products/:id/detail',
   Distros: '/distributors',
   Orders: '/orders'
 };
