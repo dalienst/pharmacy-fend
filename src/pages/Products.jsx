@@ -53,7 +53,7 @@ export default function Products() {
           <div className="table-responsive">
             <table
               className="product-table"
-              id="products-table"
+              id="product-table"
               width="100%"
               cellSpacing="0"
             >
