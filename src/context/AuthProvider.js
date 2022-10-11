@@ -12,6 +12,7 @@ export function AuthProvider({ children }) {
     setAuth((prev) => {
       return {
         ...prev,
+        isLoggedIn: true,
         user_id: jwtDecode(LocalStorageService.getAccessToken()),
         access: LocalStorageService.getAccessToken()
       };

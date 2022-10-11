@@ -15,10 +15,10 @@ const useRefreshToken = () => {
       return {
         ...prev,
         user_id: jwtDecode(response.data.access).user_id,
-        access: response.data.access
+        access: response?.data?.access
       };
     });
-    return response.data.access;
+    return response?.data?.access;
   };
   return refresh;
 };

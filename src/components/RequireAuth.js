@@ -9,7 +9,7 @@ function RequireAuth() {
   return auth?.access ? (
     <Outlet />
   ) : (
-    <Navigate to={publicLinks.LOGIN} state={{ from: location }} replace />
+    <Navigate to={publicLinks.Login} state={{ from: location }} replace />
   );
 }
 

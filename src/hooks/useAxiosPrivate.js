@@ -8,7 +8,7 @@ const useAxiosPrivate = () => {
   const { auth } = useAuth();
 
   useEffect(() => {
-    const requestIntercept = axiosPrivate.interceptors.request.use(
+    const requestIntercept = axiosPrivate?.interceptors?.request.use(
       (config) => {
         if (!config.headers.Authorization) {
           // eslint-disable-next-line no-param-reassign
@@ -19,7 +19,7 @@ const useAxiosPrivate = () => {
       (error) => Promise.reject(error)
     );
 
-    const responseIntercept = axiosPrivate.interceptors.response.use(
+    const responseIntercept = axiosPrivate?.interceptors?.response.use(
       (response) => response,
       async (error) => {
         const previousRequest = error?.config;

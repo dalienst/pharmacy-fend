@@ -9,7 +9,6 @@ import useAxiosPrivate from "../hooks/useAxiosPrivate";
 
 const ProductsModalDisplay = ({ setOpen, product }) => {
   const axiosPrivate = useAxiosPrivate();
-  console.log(product?.item_name);
 
   return (
     <>
@@ -46,7 +45,7 @@ const ProductsModalDisplay = ({ setOpen, product }) => {
                 formData.append("expiry", values.expiry);
                 formData.append("distributor", values.distributor);
                 try {
-                  await axiosPrivate.patch(`inventory/product/${product.id}/`);
+                  await axiosPrivate.patch(`inventory/product/${product.id}/`, formData);
                   toast.success("Product Updated");
                   setOpen(false);
                 } catch (error) {}

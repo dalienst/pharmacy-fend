@@ -9,8 +9,8 @@ const LocalStorageService = (() => {
     return service;
   };
   const setToken = (tokenObj) => {
-    localStorage.setItem('access', tokenObj.access);
-    localStorage.setItem('refresh', tokenObj.refresh);
+    localStorage.setItem('access', tokenObj?.access);
+    localStorage.setItem('refresh', tokenObj?.refresh);
   };
   const getAccessToken = () => {
     return localStorage.getItem('access');
